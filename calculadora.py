@@ -64,19 +64,19 @@ deducible_seleccionado_rt = st.selectbox('Selecciona el deducible de ROBO TOTAL:
 prima_rt = df_primaRT.loc[df_primaRT['DEDUCIBLE'] == deducible_seleccionado_rt, "PRIMA"].values[0] # el valor que se cambia aqui es el 14% segun el deducible que se quiera
 
 SA_rc = [500000,550000,600000,650000,700000,750000,800000,850000,900000,950000,1000000] # Sumas aseguradas de responsabilidad civil
-suma_asegurada_seleccionada_rc = st.selectbox('Selecciona la suma que quieres asegfurar para RESPONSABILIDAD CIVIL:', SA_rc) # seleccionamos la suma asegurada de responsabilidad civil
+suma_asegurada_seleccionada_rc = st.selectbox('Selecciona la suma asegurada para RESPONSABILIDAD CIVIL:', SA_rc) # seleccionamos la suma asegurada de responsabilidad civil
 suma_asegurada_solicitada_rc = suma_asegurada_seleccionada_rc #ejemplo, debe ser la prima base de 500,000 + multimplos de 50,000
 # el valor que cambia aqui son los 600000 segun la SA que se requiera
 prima_rc = prima_res(suma_asegurada_solicitada_rc)
 
 SA_rc = [100000,110000,120000,130000,140000,150000,160000,170000,180000,190000,200000] # Sumas aseguradas de responsabilidad civil
-suma_asegurada_seleccionada_gm = st.selectbox('Selecciona la suma que quieres asegurar para GASTOS MÉDICOS:', SA_rc) # seleccionamos la suma asegurada de responsabilidad civil
+suma_asegurada_seleccionada_gm = st.selectbox('Selecciona la suma asegurada para GASTOS MÉDICOS:', SA_rc) # seleccionamos la suma asegurada de responsabilidad civil
 suma_asegurada_solicitada_gm = suma_asegurada_seleccionada_gm #ejemplo, debe ser la prima base de 100,000 + multimplos de 50,000
 # el valor que cambia aqui son los 150000 segun la SA que se requiera
 prima_gm = prima_gasm(suma_asegurada_solicitada_gm)
 
 if st.button("CALCULA LA PRIMA TOTAL"): # Boton para calcular la prima
     prima_total = float(prima_dm + prima_rt + prima_rc + prima_gm) # SUMA DE TODAS LAS PRIMAS
-    st.success(f'La prima total es: ${prima_total}') # imprime la prima total
+    st.success(f'La prima total es: ${prima_total:,.2f}') # imprime la prima total
 
 #print(prima_total)
