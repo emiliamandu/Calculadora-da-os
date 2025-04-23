@@ -10,7 +10,7 @@ with col2:
     st.image(url_imagen, width=400)
 
 
-st.text('Para el calculo de la prima total para un seguro de auto tomamos en cuenta los siguientes datos, para los cuales se cuenta con sus respectivas opciones.')
+st.text('Para el calculo de la prima total para un seguro de auto tomamos en cuenta cuatro datos proporcionados por el cliente, el deducible de daños materiales, el deducible de robo total, la suma asegurada de responsabilidad civil y la suma asegurada de gastos médicos.')
 
 pb_dm = 4300/.90
 pb_rt = 2500/1.05
